@@ -1,0 +1,7 @@
+Email :  <input type="text" [(ngModel)]="email" /><br><BR>
+    <span class="error">{{emailError}}</span>
+    <br>
+    Password : <input type="password" [(ngModel)]="password" /><br><br>
+          <span class="error">{{passwordError}}</span>
+          <br>
+    <button (click)="login()" >Login</button>

@@ -11,4 +11,8 @@ export class PlaceserviceService {
   placeApi(data:any):Observable<any>{
     return this.http.post("http://localhost:9909/place",data)
   }
+  getAllPlacesApi():Observable<any>
+  {
+    return this.http.get("http://localhost:9909/place")
+  }
 }

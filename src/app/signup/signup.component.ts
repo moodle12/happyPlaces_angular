@@ -65,7 +65,7 @@ export class SignupComponent implements OnInit {
         "gender":this.gender,
         "password":this.password,
         "lastName":this.lastName,
-        "userType":"62bc524c605fd384303e7ed9"
+        "userType":"62bc5258605fd384303e7edb"
       }
       this.sessionService.signupApi(data).subscribe(res=>{
         console.log("api response ");

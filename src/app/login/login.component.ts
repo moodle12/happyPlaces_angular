@@ -54,12 +54,12 @@ export class LoginComponent implements OnInit {
         else{
         console.log("api resp");
         console.log(res);
-        console.log(res.data.userType.userTypeName);
+        //console.log(res.data.userType.userTypeName);
         if (res.data.userType.userTypeName=="Admin") {
           this.router.navigateByUrl("/admin/dashboard")
         }
         else if(res.data.userType.userTypeName=="Vendor"){
-            this.router.navigateByUrl("/vendor/home")
+            this.router.navigateByUrl("/customer/home")
         }
         else if(res.data.userType.userTypeName=="Customer" || res.data.userType.userTypeName=="User1" ){
           this.router.navigateByUrl("/customer/home")

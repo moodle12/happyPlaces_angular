@@ -20,6 +20,9 @@ export class UserserviceService {
   {
     return this.httpClient.delete("http://localhost:9909/user/"+userId)
   }
+  getUserByIdApi(userid:any):Observable<any>{
+    return this.httpClient.get("http://localhost:9909/getuserbyid/"+userid);
+  }
   editUserApi(data:any):Observable<any>
   {
     return this.httpClient.put("http://localhost:9909/user",data)

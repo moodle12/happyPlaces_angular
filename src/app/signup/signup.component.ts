@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionService } from '../session.service';
+import { ToastrService } from 'ngx-toastr'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
 
   firstNameError = ""
   emailError = ""
-  constructor(private router:Router,private sessionService:SessionService) { }
+  constructor(private router:Router,private sessionService:SessionService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
     console.log("signup component");
@@ -73,6 +74,7 @@ export class SignupComponent implements OnInit {
         console.log(res.data.userType.userTypeName);
 
      });
+     this.toastr.success("Signed Up Successfully..","",{timeOut:3000})
       this.router.navigateByUrl("/login");
 
     }

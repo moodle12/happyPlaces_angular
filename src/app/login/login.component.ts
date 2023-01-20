@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionService } from '../session.service';
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   password:string=""
   emailError=""
   passwordError=""
-  constructor(private router:Router,private sessionService:SessionService) { }
+  constructor(private router:Router,private sessionService:SessionService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
     console.log("login component");
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
     }
 
     if(isError == true ){
-      console.log("Error ");
+      this.toastr.error("Please Enter Valid Credentials!!","Error",{timeOut:0})
 
     }else{
       //login
@@ -49,19 +50,24 @@ export class LoginComponent implements OnInit {
       }
       this.sessionService.loginApi(data).subscribe(res => {
         if (res.status == -1) {
-          alert("Invalid Credentials")
+          this.toastr.error("Invalid Credentials!!","Error",{timeOut:100})
         }
         else{
+          this.toastr.success("Logged In Successfully..","Success",{timeOut:100})
         console.log("api resp");
         console.log(res);
+
         //console.log(res.data.userType.userTypeName);
         if (res.data.userType.userTypeName=="Admin") {
+          this.toastr.success("Logged In Successfully..","Success",{timeOut:100})
           this.router.navigateByUrl("/admin/dashboard")
         }
         else if(res.data.userType.userTypeName=="Vendor"){
-            this.router.navigateByUrl("/customer/home")
+          this.toastr.success("Logged In Successfully..","Success",{timeOut:100})
+            this.router.navigateByUrl("/vendor/dashboard")
         }
         else if(res.data.userType.userTypeName=="Customer" || res.data.userType.userTypeName=="User1" ){
+          this.toastr.success("Logged In Successfully..","Success",{timeOut:100})
           this.router.navigateByUrl("/customer/home")
         }
       }

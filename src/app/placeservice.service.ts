@@ -15,4 +15,19 @@ export class PlaceserviceService {
   {
     return this.http.get("http://localhost:9909/place")
   }
+  getAllActivitiesApi():Observable<any>{
+    return this.http.get("http://localhost:9909/activity")
+  }
+  deletePlaceApi(placeId:any):Observable<any>
+  {
+    return this.http.delete("http://localhost:9909/place/"+placeId)
+  }
+  getplaceByIdApi(placeid:any):Observable<any>{
+    return this.http.get("http://localhost:9909/getplacebyid/"+placeid);
+  }
+  editPlaceApi(data:any):Observable<any>
+  {
+    return this.http.put("http://localhost:9909/place",data)
+  }
+
 }

@@ -11,9 +11,12 @@
       <br>
       <h5>Add a Vendor</h5>
       <div class="form-group">
-        Users: <select [(ngModel)]="user">
+        Vendor: <select [(ngModel)]="user">
           <option *ngFor="let u of users"   value="{{u._id}}">{{u.firstName}}</option>
         </select>
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="businessName" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Vendor's Business Name">
       </div>
           <div class="form-group">
             <input type="text" [(ngModel)]="businessType" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Vendor Type">

@@ -15,7 +15,7 @@
         <thead>
         <tr>
           <th>User</th>
-          <th>Vendor</th>
+          <th>Business Name of a Vendor</th>
           <th>Business Stars</th>
           <th>Comment</th>
           <th>Visible</th>
@@ -27,7 +27,7 @@
 
         <tr *ngFor="let f of feedbacks">
           <td>{{f.user.firstName}} </td>
-          <td>{{f.user.lastName}}</td>
+          <td>{{f.business.businessName}}</td>
           <td>{{f.businessStars}} </td>
           <td>{{f.comment}} </td>
           <td>{{f.isVisible}} </td>

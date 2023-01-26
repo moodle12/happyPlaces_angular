@@ -13,6 +13,7 @@ export class AddvendorComponent implements OnInit {
   constructor(private userservice:UserserviceService,private router:Router,private vendorservice:VendorService) { }
   users:Array<any> = []
   user=""
+  businessName=""
   businessType=""
   businessAddress=""
   businessRating=0
@@ -22,6 +23,7 @@ export class AddvendorComponent implements OnInit {
   ngOnInit(): void {
     this.userservice.getAllUsersApi().subscribe(resp => {
       this.users = resp.data;
+      this.users=this.users.filter(t=>t.userType.userTypeName=="Vendor")
       console.log(this.users);
     })
   }
@@ -30,6 +32,7 @@ export class AddvendorComponent implements OnInit {
   {
     let data={
       "user":this.user,
+      "businessName":this.businessName,
       "businessType":this.businessType,
       "businessAddress":this.businessAddress,
       "businessRating":this.businessRating,

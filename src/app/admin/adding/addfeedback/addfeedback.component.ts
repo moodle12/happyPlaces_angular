@@ -12,7 +12,8 @@ export class AddfeedbackComponent implements OnInit {
 
   constructor(private userservice:UserserviceService,private router:Router,private vendorservice:VendorService,private feedbackservice:FeedbackService) { }
   users:Array<any> = []
-  // vendors:Array<any> = []
+   businessArray:Array<any>= []
+  //  vendors:Array<any> = []
   user=""
   business=""
   businessStars=0
@@ -22,11 +23,16 @@ export class AddfeedbackComponent implements OnInit {
   ngOnInit(): void {
     this.userservice.getAllUsersApi().subscribe(resp => {
       this.users = resp.data;
-      console.log(this.users);
+      this.users=this.users.filter(t=>t.userType.userTypeName=="Customer")
+      // this.businessArray = resp.data;
+      // this.businessArray= this.businessArray.filter(t=>t.userType.userTypeName == "Vendor")
+      // console.log(this.users);
     })
-    // this.vendorservice.getAllVendorsApi().subscribe(resp =>{
-    //   this.business=resp.data;
-    // })
+    this.vendorservice.getAllVendorsApi().subscribe(resp =>{
+      this.businessArray=resp.data;
+      console.log(this.businessArray);
+
+    })
   }
 
   addFeedback()

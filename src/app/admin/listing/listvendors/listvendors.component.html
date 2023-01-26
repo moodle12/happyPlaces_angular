@@ -15,6 +15,7 @@
         <thead>
         <tr>
           <th>User</th>
+          <th>Vendor's Business Name</th>
           <th>Vendor Type</th>
           <th>Vendor Address</th>
           <th>Consumer Contact</th>
@@ -27,6 +28,7 @@
 
         <tr *ngFor="let v of vendors">
           <td>{{v.user.firstName}}</td>
+          <td>{{v.businessName}}</td>
           <td>{{v.businessType}}</td>
           <td>{{v.businessAddress}}</td>
           <td>{{v.consumerContact}}</td>

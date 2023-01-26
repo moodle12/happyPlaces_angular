@@ -81,9 +81,18 @@ export class ContentComponent implements OnInit {
       }
 
     })
-    // this.chart4=new Chart("chart4",{
 
-    // })
+    this.chart4= new Chart("chart4",{
+      type:"polarArea",
+      data:{
+        labels:["Positive Feedback","Negative Feedback"],
+        datasets:[{
+          label:"Total Feedbacks",
+          data:[3,3],
+          backgroundColor:["#3b85c0","orange"],
+      }]
+      }
+    })
 
 
   }

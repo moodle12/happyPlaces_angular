@@ -15,6 +15,10 @@ export class BookingService {
   {
     return this.http.get("http://localhost:9909/booking")
   }
+  getAllStatusesApi():Observable<any>
+  {
+    return this.http.get("http://localhost:9909/status")
+  }
   getAllPlacesApi():Observable<any>
   {
     return this.http.get("http://localhost:9909/place")
@@ -37,7 +41,9 @@ export class BookingService {
   {
     return this.http.get("http://localhost:9909/getthismonthbooking")
   }
-
+  getBookingByStatusApi(statusid:any):Observable<any>{
+    return this.http.get("http://localhost:9909/getbookingbystatus/"+statusid);
+  }
   editBookingApi(data:any):Observable<any>
   {
     return this.http.put("http://localhost:9909/booking",data)

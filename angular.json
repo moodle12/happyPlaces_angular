@@ -34,12 +34,20 @@
               "src/css/vendor/style.css",
               "src/css/typeicons/typicons.css",
               "node_modules/datatables.net-dt/css/jquery.dataTables.min.css",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/datatables.net-buttons-dt/css/buttons.dataTables.min.css"
             ],
             "scripts": [
               "src/js/Chart.min.js",
                "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/datatables.net/js/jquery.dataTables.min.js"
+              "node_modules/datatables.net/js/jquery.dataTables.min.js",
+              "node_modules/datatables.net-buttons/js/dataTables.buttons.min.js",
+              "node_modules/datatables.net-buttons/js/buttons.colVis.js",
+              "node_modules/datatables.net-buttons/js/buttons.flash.js",
+              "node_modules/datatables.net-buttons/js/buttons.html5.js",
+              "node_modules/datatables.net-buttons/js/buttons.print.js",
+              "node_modules/pdfmake/build/pdfmake.min.js",
+              "node_modules/pdfmake/build/vfs_fonts.js"
             ]
           },
           "configurations": {

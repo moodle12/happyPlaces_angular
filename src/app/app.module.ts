@@ -41,6 +41,9 @@ import { ListvendorsComponent } from './admin/listing/listvendors/listvendors.co
 import { AddvendorComponent } from './admin/adding/addvendor/addvendor.component';
 import { EditvendorComponent } from './admin/editing/editvendor/editvendor.component';
 import { VdashboardComponent } from './vendor/vdashboard/vdashboard.component';
+import { ToursComponent } from './customer/tours/tours.component';
+import { ReportsComponent } from './admin/reports/reports.component';
+import { BookingsreportComponent } from './admin/bookingsreport/bookingsreport.component';
 
 
 
@@ -82,7 +85,10 @@ import { VdashboardComponent } from './vendor/vdashboard/vdashboard.component';
    ListvendorsComponent,
    AddvendorComponent,
    EditvendorComponent,
-   VdashboardComponent
+   VdashboardComponent,
+   ToursComponent,
+   ReportsComponent,
+   BookingsreportComponent
   ],
   imports: [
     BrowserModule,

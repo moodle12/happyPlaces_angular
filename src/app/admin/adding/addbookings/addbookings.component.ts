@@ -11,11 +11,12 @@ export class AddbookingsComponent implements OnInit {
   users: Array<any> = []
   places: Array<any> = []
   activities: Array<any> = []
+  statuses: Array<any> = []
 
-  user=""
-  place=""
-  act=""
-  status=""
+  user="-1"
+  place="-1"
+  act="-1"
+  status="-1"
   noOfPerson=0
   dateOfBooking=""
   constructor(private bookingservice:BookingService,private router:Router) { }
@@ -32,6 +33,10 @@ export class AddbookingsComponent implements OnInit {
     this.bookingservice.getAllActivitiesApi().subscribe(resp => {
       this.activities = resp.data;
       console.log(this.activities);
+    })
+    this.bookingservice.getAllStatusesApi().subscribe(resp => {
+      this.statuses = resp.data;
+      console.log(this.statuses);
     })
   }
 

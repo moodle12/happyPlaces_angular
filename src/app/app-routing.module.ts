@@ -7,6 +7,7 @@ import { AddfeedbackComponent } from './admin/adding/addfeedback/addfeedback.com
 import { AddpostsComponent } from './admin/adding/addposts/addposts.component';
 import { AdduserComponent } from './admin/adding/adduser/adduser.component';
 import { AddvendorComponent } from './admin/adding/addvendor/addvendor.component';
+import { BookingsreportComponent } from './admin/bookingsreport/bookingsreport.component';
 import { DashboardComponent } from './admin/dash/dashboard/dashboard.component';
 import { EditactivityComponent } from './admin/editing/editactivity/editactivity.component';
 import { EditbookingComponent } from './admin/editing/editbooking/editbooking.component';
@@ -21,7 +22,9 @@ import { ListfeedbacksComponent } from './admin/listing/listfeedbacks/listfeedba
 import { ListpostsComponent } from './admin/listing/listposts/listposts.component';
 import { ListusersComponent } from './admin/listing/listusers/listusers.component';
 import { ListvendorsComponent } from './admin/listing/listvendors/listvendors.component';
+import { ReportsComponent } from './admin/reports/reports.component';
 import { HomeComponent } from './customer/home/home.component';
+import { ToursComponent } from './customer/tours/tours.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -59,7 +62,10 @@ const routes: Routes = [
   {path:"admin/editvendor/:businessId",component:EditvendorComponent},
   {path:"admin/listfeedbacks",component:ListfeedbacksComponent},
   {path:"admin/addfeedback",component:AddfeedbackComponent},
-  {path:"vendor/dashboard",component:VdashboardComponent}
+  {path:"vendor/dashboard",component:VdashboardComponent},
+  {path:"customer/tours",component:ToursComponent},
+  {path:"admin/reports",component:ReportsComponent},
+  {path:"admin/bookingreports",component:BookingsreportComponent}
 ];
 
 @NgModule({

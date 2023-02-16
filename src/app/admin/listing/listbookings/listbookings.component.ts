@@ -13,11 +13,24 @@ export class ListbookingsComponent implements OnInit {
   users: Array<any> = []
   places: Array<any> = []
   activity: Array<any> = []
+  dtOptions:any={}
 
   ngOnInit(): void {
     this.bookingservice.getAllBookingsApi().subscribe(resp => {
       this.bookings = resp.data;
       console.log(this.bookings);
+      this.dtOptions = {
+
+        search: {
+          return: true,
+        },
+        dom: 'Bfrtip',
+        buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+        export:true
+      }
+
   })
   this.bookingservice.getAllUsersApi().subscribe(resp => {
     this.users = resp.data;

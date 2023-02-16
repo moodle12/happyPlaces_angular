@@ -43,6 +43,7 @@
                 </div>
                 <div class="form-group">
                   Activities: <select [(ngModel)]="activity">
+                    <option value="-1">Select Activity</option>
                     <option *ngFor="let a of activities"  value="{{a._id}}">{{a.actType}}</option>
                   </select>
                 </div>

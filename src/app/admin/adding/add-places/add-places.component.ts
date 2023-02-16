@@ -18,7 +18,7 @@ export class AddPlacesComponent implements OnInit {
   totalDay:Number=0;
   totalNight:Number=0;
   specialInstruction:String="";
-  activity:String="";
+  activity:String="-1";
 
   activities: Array<any> = []
   constructor(private router:Router,private placeservice:PlaceserviceService) { }

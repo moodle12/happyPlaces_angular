@@ -11,7 +11,7 @@
       <a routerLink="/admin/addbookings">Add a Booking</a>
       <br>
       <h5>List Of Bookings</h5>
-      <table *ngIf="bookings.length > 0"  datatable="ng"  id="listbookings" >
+      <table *ngIf="bookings.length > 0" [dtOptions]="dtOptions" datatable="ng"  id="listbookings" >
         <thead>
         <tr>
           <th>User's Name</th>
@@ -30,7 +30,7 @@
           <td>{{b.user.firstName}}</td>
           <td>{{b.act.actType}}</td>
           <td>{{b.place.placeName}}</td>
-          <td>{{b.status}}</td>
+          <td>{{b.status.statusName}}</td>
           <td>{{b.noOfPerson}}</td>
           <td>{{b.dateOfBooking}}</td>
           <td><i class="typcn typcn-trash pointer" title="delete" (click)="deleteBooking(b._id)"></i></td>

@@ -10,7 +10,7 @@ export class VdashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
-  }
 
+  }
+  
 }

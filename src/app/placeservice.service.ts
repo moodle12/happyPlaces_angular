@@ -29,5 +29,9 @@ export class PlaceserviceService {
   {
     return this.http.put("http://localhost:9909/place",data)
   }
+  getAllCommonPlacesApi():Observable<any>
+  {
+    return this.http.get("http://localhost:9909/commonplace")
+  }
 
 }

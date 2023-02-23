@@ -11,7 +11,7 @@
       <a routerLink="/admin/addvendor">Add Vendor</a>
       <br>
       <h5>List Of Vendors</h5>
-      <table *ngIf="vendors.length > 0 " datatable="ng"  id="listvendors" >
+      <table *ngIf="vendors.length > 0 " [dtOptions]="dtOptions" datatable="ng"  id="listvendors" >
         <thead>
         <tr>
           <th>User</th>

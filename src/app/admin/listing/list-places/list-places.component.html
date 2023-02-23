@@ -11,7 +11,7 @@
       <a routerLink="/admin/addplaces">Add Place</a>
       <br>
       <h5>List Of Places</h5>
-      <table *ngIf="places.length > 0 " datatable="ng"  id="list-places" >
+      <table *ngIf="places.length > 0 " [dtOptions]="dtOptions" datatable="ng"  id="list-places" >
         <thead>
         <tr>
           <th>PlaceName</th>

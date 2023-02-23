@@ -29,7 +29,11 @@
 .second .hero-description-bk {
   background-image: linear-gradient(-20deg , #bb7413, #e7d25c)
 }
+.third .hero-description-bk {
+    background: linear-gradient(to right, #e1eec3, #f05053);
 
+  /* background-image: linear-gradient(-20deg , #bb7413, #e7d25c) */
+}
 .hero-logo {
   height: 80px;
   width: 80px;

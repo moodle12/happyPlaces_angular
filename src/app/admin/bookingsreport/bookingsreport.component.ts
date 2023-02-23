@@ -47,7 +47,6 @@ export class BookingsreportComponent implements OnInit {
         this.users=resp.data;
         console.log(this.users);
         this.dtOptions = {
-
           search: {
             return: true,
           },
@@ -63,4 +62,5 @@ export class BookingsreportComponent implements OnInit {
       this.toastr.error("Something went Wrong Please TryAgain!!!","", { timeOut: 3000 })
     })
   }
+
 }

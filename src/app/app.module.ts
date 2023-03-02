@@ -44,6 +44,7 @@ import { VdashboardComponent } from './vendor/vdashboard/vdashboard.component';
 import { ToursComponent } from './customer/tours/tours.component';
 import { ReportsComponent } from './admin/reports/reports.component';
 import { BookingsreportComponent } from './admin/bookingsreport/bookingsreport.component';
+import { AboutusComponent } from './customer/aboutus/aboutus.component';
 
 
 
@@ -88,7 +89,8 @@ import { BookingsreportComponent } from './admin/bookingsreport/bookingsreport.c
    VdashboardComponent,
    ToursComponent,
    ReportsComponent,
-   BookingsreportComponent
+   BookingsreportComponent,
+   AboutusComponent
   ],
   imports: [
     BrowserModule,

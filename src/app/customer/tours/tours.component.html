@@ -55,15 +55,15 @@
 		    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		  	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			        <li class="nav-item active"><a routerLink="/customer/home" class="nav-link" href="index.html">Home</a></li>
-				    <li class="nav-item"><a class="nav-link" href="aboutUs.html">About Us</a></li>
+				    <li class="nav-item"><a class="nav-link" routerLink="/customer/aboutus" href="">About Us</a></li>
 				    <li class="nav-item dropdown">
-        				<a class="nav-link dropdown-toggle" href="tripPackets.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trip Packages</a>
-        				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        					<a class="dropdown-item" href="tripPackets.html">Travel Options</a>
+        				<a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trip Packages</a>
+        				<div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown" *ngFor="let u of uniqueplaces">
+        					<a class="dropdown-item" href="/">Travel Options</a>
         					<div class="dropdown-divider"></div>
-					        <a class="dropdown-item" href="thailand.html">Thailand - 2 weeks</a>
-          					<a class="dropdown-item" href="australia.html">Australia - 3 weeks</a>
-          			        <a class="dropdown-item" href="asia.html">Asia - 4 weeks</a>
+					        <a class="dropdown-item" href="/">{{u.placeName}} - 2 weeks</a>
+          				<a class="dropdown-item" href="/">{{u.placeName}} - 3 weeks</a>
+          			  <a class="dropdown-item" href="/">{{u.placeName}} - 4 weeks</a>
         				</div>
         			</li>
 				    <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact Us</a></li>
@@ -137,13 +137,14 @@
         			<div class="row">
             			<div class="col-md-4" *ngFor="let p of uniqueplaces">
               				<div class="card mb-4 box-shadow">
-                				<img class="card-img-top" alt="Bangkok Picture" style="height: 225px; width: 100%; display: block;" src="https://i.imgur.com/q2BxhmQ.jpg" data-holder-rendered="true">
+                				<img class="card-img-top" alt="Bangkok Picture" style="height: 225px; width: 100%; display: block;" src={{p.placeImage}} data-holder-rendered="true">
                 				<div class="card-body">
 									<h6> {{p.placeName}} - Total Days ({{p.totalDay}}) -Total Nights ({{p.totalNight}}) </h6>
-                            <p class="card-text">Two weeks is a short time to explore Thailand to the fullest. However this itinerary is crafted to give you a good grasp of the entire country while keeping the logistics as easy as possible.</p>
+                            <p class="card-text"><span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size:larger">Title:</span>{{p.title}}</p>
                             <p class="card-text">Brief - {{p.description}} </p>
+                            <p class="card-text"><span style="font-family:Georgia, 'Times New Roman', Times, serif;font-weight:700">Special Instructions:</span>{{p.specialInstruction}}</p>
                   					<div class="d-flex justify-content-between align-items-center">
-                    					<a href="thailand.html" role="button" class="btn btn-block btn-primary">More Information</a>
+                    					<a href="thailand.html" role="button" class="btn btn-block btn-primary  shadow-lg shadow-cyan-500/50">More Information</a>
                   					</div>
                 				</div>
               				</div>
@@ -191,7 +192,7 @@
 							<div class="carousel-inner">
 								<div class="item carousel-item active">
 									<div class="img-box"><img src="https://i.imgur.com/Nb3yekw.jpg" alt="Kate Richards's picture"></div>
-									<p class="testimonial">The travel agent - Anthony - from Orient Travel helped my husband and I plan our honeymoon in Australia. He was absolutely fantastic to work with and very responsive! I would HIGHLY recommend their services. They made the entire process simple and easy (which was a HUGE help since it was our first time out of the country). Every step of the way, he was there to answer all of our questions. Thanks again Anthony!!!</p>
+									<p class="testimonial">The travel agent - Anthony - from Happy Places helped my husband and I plan our honeymoon in Australia. He was absolutely fantastic to work with and very responsive! I would HIGHLY recommend their services. They made the entire process simple and easy (which was a HUGE help since it was our first time out of the country). Every step of the way, he was there to answer all of our questions. Thanks again Anthony!!!</p>
 									<p class="overview"><b>Kate Richards</b>, Teacher</p>
 								</div>
 								<div class="item carousel-item">

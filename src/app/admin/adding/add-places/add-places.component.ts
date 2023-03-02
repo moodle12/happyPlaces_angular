@@ -8,17 +8,18 @@ import { PlaceserviceService } from 'src/app/placeservice.service';
   styleUrls: ['./add-places.component.css']
 })
 export class AddPlacesComponent implements OnInit {
-  placeName:String="";
-  lat:String="";
-  long:String="";
-  title:String="";
-  description:String="";
-  totalSeats:Number=0;
-  totalPrice:Number=0;
-  totalDay:Number=0;
-  totalNight:Number=0;
-  specialInstruction:String="";
-  activity:String="-1";
+  placeName:string="";
+  lat:string="";
+  long:string="";
+  title:string="";
+  description:string="";
+  totalSeats:any=0;
+  totalPrice:any=0;
+  totalDay:any=0;
+  totalNight:any=0;
+  specialInstruction:string="";
+  placeImage:string="";
+  activity:string="-1";
 
   activities: Array<any> = []
   constructor(private router:Router,private placeservice:PlaceserviceService) { }
@@ -30,11 +31,31 @@ export class AddPlacesComponent implements OnInit {
 
     })
   }
+  selectImage(event:any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.placeImage = file;
+    }
+  }
 
   addplace()
   {
+    const formData = new FormData();
+    formData.append('placeImage', this.placeImage);
+    formData.append('placeName', this.placeName);
+    formData.append('lat', this.lat);
+    formData.append('long', this.long);
+    formData.append('title', this.title);
+    formData.append('description', this.description);
+    formData.append('totalSeats', this.totalSeats);
+    formData.append('totalPrice', this.totalPrice);
+    formData.append('totalDay', this.totalDay);
+    formData.append('totalNight', this.totalNight);
+    formData.append('specialInstruction', this.specialInstruction);
+    formData.append('activity', this.activity);
     let data= {
       "placeName":this.placeName,
+      "placeImage":formData,
       "lat":this.lat,
       "long":this.long,
       "title":this.title,
@@ -47,10 +68,9 @@ export class AddPlacesComponent implements OnInit {
       "activity":this.activity
     }
 
-    this.placeservice.placeApi(data).subscribe(res=>{
+    this.placeservice.placeApi(formData).subscribe(res=>{
       console.log("place response ");
       console.log(res);
-
    });
   }
 

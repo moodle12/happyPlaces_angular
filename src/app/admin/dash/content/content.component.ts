@@ -43,7 +43,7 @@ export class ContentComponent implements OnInit {
           labels:["Total Bookings","This Month Booking"],
           datasets:[{
             label:"Bookings",
-            data:[4,this.bookingCount],
+            data:[1,this.bookingCount],
             backgroundColor:["#8164fc","magenta"],
         }]
         }
